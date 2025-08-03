@@ -22,7 +22,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kiefer-land/portfolio"
+    "url": "https://github.com/kiefertaylorland/portfolio"
   },
   "devDependencies": {
     "@html-validate/html-validate": "^8.0.0",
