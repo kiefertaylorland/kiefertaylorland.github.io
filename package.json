@@ -1,0 +1,31 @@
+{
+  "name": "kiefer-land-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Kiefer Land - QA Engineer & Consultant",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "dev-alt": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "lint": "echo 'Running HTML validation...' && npx html-validate index.html",
+    "test": "echo 'No tests configured yet'",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "portfolio",
+    "qa-engineer",
+    "software-testing",
+    "automation",
+    "quality-assurance"
+  ],
+  "author": "Kiefer Land <kland7@wgu.edu>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/portfolio"
+  },
+  "devDependencies": {
+    "@html-validate/html-validate": "^8.0.0",
+    "serve": "^14.0.0"
+  }
+}

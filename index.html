@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kiefer Land - Software QA Engineer & Automation Specialist offering professional testing services and consultation">
+    <meta name="keywords" content="QA Engineer, Software Testing, Automation, Quality Assurance, Consultation">
+    <meta name="author" content="Kiefer Land">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <title>Kiefer Land - QA Engineer & Consultant</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">KL</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Hi, I'm</span>
+                    <span class="hero-name">Kiefer Land</span>
+                </h1>
+                <p class="hero-subtitle">Software QA Engineer & Automation Specialist</p>
+                <p class="hero-description">
+                    I help teams build secure, high-quality software through comprehensive testing strategies, automation frameworks, and Agile methodologies.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+                <div class="hero-links">
+                    <a href="https://www.linkedin.com/in/kiefertaylorland" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/kiefertaylorland" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">I'm passionate about quality, security, and user experience</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a QA engineer with over 3 years of experience helping teams deliver high-quality, secure software.
+                    </p>
+                    <p>
+                        I specialize in building comprehensive testing strategies that catch critical bugs early and improve overall product reliability.
+                    </p>
+                    <p>
+                        My approach combines manual exploratory testing with robust automation frameworks, 
+                        ensuring both thorough coverage and efficient execution.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Test Cases Authored</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">40%</span>
+                            <span class="stat-label">Automation Coverage Increase</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Bugs Prevented</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <h3>Core Expertise</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Quality Assurance</span>
+                        <span class="skill-tag">Manual Testing</span>
+                        <span class="skill-tag">Functional Testing</span>
+                        <span class="skill-tag">Performance Testing</span>
+                        <span class="skill-tag">Database Testing</span>
+                        <span class="skill-tag">API Testing</span>
+                        <span class="skill-tag">Regression Testing</span>
+                        <span class="skill-tag">UI Testing</span>
+                        <span class="skill-tag">Application Security Testing</span>
+                        <span class="skill-tag">Automation</span>
+                        <span class="skill-tag">Reporting</span>
+                        <span class="skill-tag">Agile Methodologies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">Comprehensive QA solutions for your business</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3 class="service-title">Manual Testing</h3>
+                    <p class="service-description">
+                        Comprehensive exploratory, functional, and regression testing to ensure 
+                        your application works flawlessly across all scenarios.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Test Automation</h3>
+                    <p class="service-description">
+                        Build scalable automation frameworks using modern tools like Selenium, 
+                        Playwright, and API testing with Postman/Newman.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3 class="service-title">Security Testing</h3>
+                    <p class="service-description">
+                        Vulnerability assessments, penetration testing, and security compliance 
+                        validation to protect your applications and data.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Performance Testing</h3>
+                    <p class="service-description">
+                        Load testing, stress testing, and performance optimization to ensure 
+                        your application can handle real-world usage.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3 class="service-title">QA Strategy & Consulting</h3>
+                    <p class="service-description">
+                        Develop comprehensive testing strategies, implement best practices, 
+                        and optimize your QA processes for better efficiency.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3 class="service-title">CI/CD Integration</h3>
+                    <p class="service-description">
+                        Integrate automated testing into your development pipeline for 
+                        continuous quality assurance and faster releases.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world testing solutions and achievements</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">B2B HR SaaS Platform</h3>
+                        <span class="project-tag">Quality Assurance Testing</span>
+                    </div>
+                    <p class="project-description">
+                        Led comprehensive QA efforts for a complex HR platform, implemented automated API testing, and prevented over 10 production bugs through thorough validation of pay rate and compliance workflows.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Manual Testing</span>
+                        <span class="tech-tag">API Testing</span>
+                        <span class="tech-tag">Automated Testing</span>
+                        <span class="tech-tag">Application Security Testing</span>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">Coverage Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">70%</span>
+                            <span class="metric-label">Performance Improvement</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">GenAI Test Case Generation</h3>
+                        <span class="project-tag">Innovation & Creativity</span>
+                    </div>
+                    <p class="project-description">
+                        Piloted a program to leverage ChatGPT for automated test planning and design of test cases, which accelerated testing preparation and enhanced creativity in identifying edge cases for complex business logic and critical workflows.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Generative AI</span>
+                        <span class="tech-tag">Test Planning</span>
+                        <span class="tech-tag">Testing Strategy</span>
+                        <span class="tech-tag">Test Case Design</span>
+                        <span class="tech-tag">Automation</span>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">35%</span>
+                            <span class="metric-label">Coverage Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Performance Improvement</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Multi-Integration Testing Suite</h3>
+                        <span class="project-tag">Quality Assurance Testing</span>
+                    </div>
+                    <p class="project-description">
+                        Established robust testing strategies for third-party integrations, including Single Sign-On (SSO), WebCenter, and Plaid, to guarantee seamless data flow and an exceptional user experience across all platforms.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Database Testing</span>
+                        <span class="tech-tag">End-to-End (E2E) Testing</span>
+                        <span class="tech-tag">Integration Testing</span>
+                        <span class="tech-tag">Third-party APIs</span>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">30%</span>
+                            <span class="metric-label">Integration Reliability Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">Data Sync Error Reduction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">Ready to improve your software quality?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>
+                        I'm always interested in discussing new opportunities and how I can 
+                        help improve your testing processes and software quality.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:kland7@wgu.edu" class="contact-method">
+                            <span class="contact-icon">📧</span>
+                            <span>kland7@wgu.edu</span>
+                        </a>
+                        <a href="tel:+17603827514" class="contact-method">
+                            <span class="contact-icon">📞</span>
+                            <span>(760) 382-7514</span>
+                        </a>
+                        <div class="contact-method">
+                            <span class="contact-icon">📍</span>
+                            <span>Redmond, Washington</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject *</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                        <span class="form-error" id="subject-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Kiefer Land. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/kiefertaylorland" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
