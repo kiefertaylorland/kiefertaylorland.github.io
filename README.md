@@ -1,6 +1,6 @@
-# Kiefer Land - Portfolio Website
+# Portfolio Website
 
-A modern, responsive portfolio website showcasing QA engineering expertise and services.
+Portfolio website showcasing QA engineering expertise and services.
 
 ## 📞 Contact
 
