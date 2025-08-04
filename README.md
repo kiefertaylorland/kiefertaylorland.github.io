@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Portfolio website showcasing QA engineering expertise and services.
+Showcasing QA engineering expertise and services.
 
 ## 📞 Contact
 
