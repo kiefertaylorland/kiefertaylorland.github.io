@@ -175,8 +175,18 @@ function initContactForm() {
         setFormLoading(true);
         
         try {
-            // Simulate form submission (replace with actual endpoint)
-            await simulateFormSubmission(data);
+            // Attempt real form submission to FormSubmit service
+            const nativeSubmit = () => {
+                // Fallback: native form submit will redirect but ensures delivery
+                form.submit();
+            };
+            try {
+                await submitContactForm(data);
+            } catch (ajaxErr) {
+                // Already logged inside submitContactForm
+                nativeSubmit();
+                return; // Stop further success handling (native submission takes over)
+            }
             
             // Show success message
             showSuccessMessage('Thank you! Your message has been sent successfully.');
@@ -383,18 +393,35 @@ function showErrorMessage(message) {
     }, 5000);
 }
 
-// Simulate form submission (replace with actual API call)
-async function simulateFormSubmission(data) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // Simulate success/failure
-            if (Math.random() > 0.1) { // 90% success rate
-                resolve({ success: true });
-            } else {
-                reject(new Error('Simulated server error'));
-            }
-        }, 2000);
-    });
+// Real form submission via FormSubmit.co
+async function submitContactForm(data) {
+    const endpoint = 'https://formsubmit.co/ajax/kiefertaylorland@gmail.com';
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('email', data.email);
+    formData.append('_subject', `Portfolio Contact: ${data.subject}`);
+    formData.append('message', data.message);
+    formData.append('_captcha', 'false');
+    try {
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: formData
+        });
+        if (!response.ok) {
+            throw new Error(`Network response was not ok (${response.status})`);
+        }
+        const result = await response.json();
+        if (!result.success) {
+            throw new Error('Form submission failed');
+        }
+        return result;
+    } catch (err) {
+        console.warn('AJAX FormSubmit attempt failed:', err);
+        throw err; // Let caller decide fallback
+    }
 }
 
 // Performance Utilities
