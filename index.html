@@ -8,7 +8,7 @@
     <meta name="author" content="Kiefer Land">
     
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -361,7 +361,12 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form" novalidate>
+                <form class="contact-form" id="contact-form" action="/api/contact" method="POST" novalidate>
+                    <!-- FormSubmit hidden inputs (fallback & configuration) -->
+                    <input type="hidden" name="_subject" value="Portfolio Contact Form Submission" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://kiefertaylorland.github.io/#contact?sent=1" />
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
                     <div class="form-group">
                         <label for="name" class="form-label">Name *</label>
                         <input type="text" id="name" name="name" class="form-input" required>
