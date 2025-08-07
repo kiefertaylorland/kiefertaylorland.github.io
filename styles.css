@@ -633,11 +633,14 @@ section {
 
 /* Contact Section */
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* Use flex so the inner block sizes to content and can be centered visually */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: var(--spacing-3xl);
     max-width: 1000px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .contact-info h3 {
@@ -669,6 +672,13 @@ section {
     padding: var(--spacing-md);
     border-radius: var(--radius-lg);
     transition: all var(--transition-fast);
+    justify-content: center; /* center icon + text grouping */
+}
+
+/* Constrain width of the text block for readability and ensure centering */
+.contact-info {
+    max-width: 640px;
+    width: 100%;
 }
 
 .contact-method:hover {

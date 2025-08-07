@@ -4,8 +4,9 @@
   "description": "Portfolio website for Kiefer Land - QA Engineer & Consultant",
   "main": "index.html",
   "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "dev-alt": "python -m http.server 8000",
+  "dev": "PORT=${PORT:-8000} python3 -m http.server $PORT",
+  "dev-alt": "python -m http.server 8000",
+  "dev-9000": "python3 -m http.server 9000",
     "serve": "npx serve .",
     "lint": "echo 'Running HTML validation...' && npx html-validate index.html",
     "test": "echo 'No tests configured yet'",
