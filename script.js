@@ -394,8 +394,12 @@ function showErrorMessage(message) {
 }
 
 // Real form submission via FormSubmit.co
+// NOTE: The FormSubmit email address should be set in a separate configuration script as `window.FORMSUBMIT_EMAIL`
 async function submitContactForm(data) {
-    const endpoint = 'https://formsubmit.co/ajax/kiefertaylorland@gmail.com';
+    if (!window.FORMSUBMIT_EMAIL) {
+        throw new Error('FormSubmit email address is not configured. Please set window.FORMSUBMIT_EMAIL.');
+    }
+    const endpoint = `https://formsubmit.co/ajax/${window.FORMSUBMIT_EMAIL}`;
     const formData = new FormData();
     formData.append('name', data.name);
     formData.append('email', data.email);
