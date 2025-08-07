@@ -680,67 +680,6 @@ section {
     font-size: 1.5rem;
 }
 
-/* Form Styles */
-.contact-form {
-    background-color: var(--background-secondary);
-    padding: var(--spacing-2xl);
-    border-radius: var(--radius-2xl);
-    border: 1px solid var(--border-color);
-}
-
-.form-group {
-    margin-bottom: var(--spacing-lg);
-}
-
-.form-label {
-    display: block;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-sm);
-}
-
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: var(--spacing-md);
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    font-family: inherit;
-    font-size: var(--font-size-base);
-    background-color: var(--background-primary);
-    transition: all var(--transition-fast);
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-}
-
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.form-error {
-    display: block;
-    color: var(--accent-color);
-    font-size: var(--font-size-sm);
-    margin-top: var(--spacing-xs);
-    min-height: 1.2em;
-}
-
-.btn-loading {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
-    }
-}
 
 /* Footer */
 .footer {
@@ -797,19 +736,6 @@ section {
 }
 
 /* Success/Error States */
-.form-success {
-    background-color: var(--success-color);
-    color: white;
-    padding: var(--spacing-md);
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-}
-
-.form-input.error,
-.form-textarea.error {
-    border-color: var(--accent-color);
-}
 
 /* Utility Classes */
 .sr-only {
