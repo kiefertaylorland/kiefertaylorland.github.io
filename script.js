@@ -3,6 +3,9 @@
 
 'use strict';
 
+// Cloudflare Worker endpoint (update after deploying worker)
+const CONTACT_ENDPOINT = 'https://YOUR_WORKER_SUBDOMAIN.workers.dev'; // TODO: replace with actual URL
+
 // DOM Content Loaded Event Listener
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
@@ -175,18 +178,8 @@ function initContactForm() {
         setFormLoading(true);
         
         try {
-            // Attempt real form submission to FormSubmit service
-            const nativeSubmit = () => {
-                // Fallback: native form submit will redirect but ensures delivery
-                form.submit();
-            };
-            try {
-                await submitContactForm(data);
-            } catch (ajaxErr) {
-                // Already logged inside submitContactForm
-                nativeSubmit();
-                return; // Stop further success handling (native submission takes over)
-            }
+            // Submit to Cloudflare Worker API
+            await submitContactForm(data);
             
             // Show success message
             showSuccessMessage('Thank you! Your message has been sent successfully.');
@@ -393,39 +386,30 @@ function showErrorMessage(message) {
     }, 5000);
 }
 
-// Real form submission via FormSubmit.co
-// NOTE: The FormSubmit email address should be set in a separate configuration script as `window.FORMSUBMIT_EMAIL`
+// Real form submission via Cloudflare Worker API
 async function submitContactForm(data) {
-    if (!window.FORMSUBMIT_EMAIL) {
-        throw new Error('FormSubmit email address is not configured. Please set window.FORMSUBMIT_EMAIL.');
+    if (!CONTACT_ENDPOINT || CONTACT_ENDPOINT.includes('YOUR_WORKER_SUBDOMAIN')) {
+        throw new Error('CONTACT_ENDPOINT is not configured. Update the constant with your deployed worker URL.');
     }
-    const endpoint = `https://formsubmit.co/ajax/${window.FORMSUBMIT_EMAIL}`;
-    const formData = new FormData();
-    formData.append('name', data.name);
-    formData.append('email', data.email);
-    formData.append('_subject', `Portfolio Contact: ${data.subject}`);
-    formData.append('message', data.message);
-    formData.append('_captcha', 'false');
-    try {
-        const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json'
-            },
-            body: formData
-        });
-        if (!response.ok) {
-            throw new Error(`Network response was not ok (${response.status})`);
-        }
-        const result = await response.json();
-        if (!result.success) {
-            throw new Error('Form submission failed');
-        }
-        return result;
-    } catch (err) {
-        console.warn('AJAX FormSubmit attempt failed:', err);
-        throw err; // Let caller decide fallback
+    const payload = {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message
+    };
+    const response = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+    });
+    if (!response.ok) {
+        throw new Error(`Request failed (${response.status})`);
     }
+    const result = await response.json();
+    if (!result.success) {
+        throw new Error('API response indicated failure');
+    }
+    return result;
 }
 
 // Performance Utilities
